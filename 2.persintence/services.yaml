@@ -49,3 +49,15 @@ spec:
       port: 80
       nodePort: 30080
   type: NodePort
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: fleetman-mongodb
+spec:
+  selector:
+    app: mongodb
+  ports:
+    - name: mongoport
+      port: 27017
+  type: ClusterIP
