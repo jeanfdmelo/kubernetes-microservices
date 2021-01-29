@@ -122,6 +122,6 @@ spec:
             mountPath: /data/db
       volumes:
         - name: mongo-persistent-storage
-          hostPath:
-            path: /mnt/fleetman-db
-            type: DirectoryOrCreate
+          # Pointer to configuration of HOW we want the mount to be implemented
+          persistentVolumeClaim:
+            claimName: mongo-pvc
